@@ -77,6 +77,12 @@ ISM43362Interface wifi(MBED_CONF_EASY_CONNECT_WIFI_ISM43362_SPI_MOSI,
                    MBED_CONF_EASY_CONNECT_WIFI_ISM43362_WAKEUP, false);
 #endif
 
+#elif MBED_CONF_APP_NETWORK_INTERFACE == WIFI_WICED
+#include "WicedInterface.h"
+#define EASY_CONNECT_WIFI_TYPE "WICED"
+
+WicedInterface wifi;
+
 #elif MBED_CONF_APP_NETWORK_INTERFACE == ETHERNET
 #include "EthernetInterface.h"
 EthernetInterface eth;
